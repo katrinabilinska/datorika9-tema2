@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Konfekšu lietus</title>
+<style>
+/* Pamata izkārtojums — šīs rindas nemaini */
+body { font-family: Arial, sans-serif; max-width: 680px; margin: 24px auto; padding: 16px; line-height: 1.6; }
+button, input { font: inherit; padding: 10px 16px; margin: 6px 0; cursor: pointer; }
+img, audio { max-width: 100%; }
+[hidden] { display: none !important; }
+
+/* NOFORMĒ ŠEIT: pielieto 2.1. un 2.2. nodarbībā apgūto CSS */
+body {
+  background-color: #f1dfee;
+  color: #000000;
+}
+
+h1 {
+  color: #db66be;
+}
+
+.noteikumi {
+  background-color: #cc53b2;
+  color: #e0bcdc;
+  padding: 12px;
+}
+
+.laukums {
+  width: 360px;
+  padding: 12px;
+  border: 2px solid #9b0c70;
+  background-color: #f087d9;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #ffd1fa;
+  color: #c516a8;
+  border: 0;
+}
+</style>
+</head>
+<body>
+<h1>Konfekšu lietus</h1>
+<p>Īss spēles mērķa apraksts spēlētājam.</p>
+<section class="noteikumi">
+  <h2>Noteikumi</h2>
+  <p>Spēlētājs kustina spēles varoni -grozu-, lai noķertu konfektes.</p>
+  <p>Kad konfektes krit, un  spēlētājs tās noķer, spēlētājs saņem punktus.</p>
+  <p>Skaņas tiks atskaņotas automātiski, kad kritīs konfektes un kad tās tiks noķertas.</p>
+  <p>Uzvaras skaņu dzirdēsi, kad uzvarēsi, uzspiežot uzvaras skaņas pogu.+-</p>
+</section>
+<div class="laukums">
+  <h2>Spēles laukums</h2>
+  <img src="atteli/varonis.png" alt="Brūns konfekšu grozs" width="128">
+  <p>Skaņas efekta nozīme spēlē:</p>
+<p>Šo skaņu dzirdēsi, kad konfektes kritīs.</p>
+<audio controls src="skanas/Falling_-_sound_effect.wav"></audio>
+<p>So skaņu dzirdēsi, kad noķersi konfekti.</p>
+<audio controls src="skanas/sound_effect_CARTOON_CATCH.wav"></audio>
+<p>Uzvaras skaņa:</p>
+<audio controls src="skanas/Winning_Sound_Effect.wav"></audio>
+
+  <p id="punkti">Punkti: 0</p>
+  <button onclick="savakt()">Savākt punktu</button>
+</div>
+<script>
+// Gatava punktu poga — šo skriptu nemaini.
+let punkti = 0;
+function savakt() {
+  punkti = punkti + 1;
+  document.getElementById("punkti").textContent = "Punkti: " + punkti;
+}
+</script>
+</body>
+</html>
